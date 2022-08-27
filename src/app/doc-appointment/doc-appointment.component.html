@@ -1,7 +1,7 @@
 
 <div>
     <button (click) ="openModal()">Create Appointment</button>
-    <select [(ngModel)]="monthName">
+    <select [(ngModel)]="monthName" (change) = "valueChange()">
         <option *ngFor="let month of monthList" [value] = "month.value">{{month.title}}</option>
     </select>
     <app-calender [month]="monthName" ></app-calender>

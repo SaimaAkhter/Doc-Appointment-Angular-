@@ -9,13 +9,20 @@ import { CreateAppointmentComponent } from './create-appointment/create-appointm
 })
 export class DocAppointmentComponent implements OnInit {
 
-  monthName = new Date().getMonth() ;
-  monthList: any ;
-
+  monthName : any;
+  monthList = [{title : 'January' ,value: 'january', num: 1} , {title:'February' , value: 'february',num: 2} , 
+  {title : 'March' , value: 'march',num : 3  } ,{title : 'April' , value : 'april', num: 4 },
+  {title: 'May' , value: 'may' , num: 5}, 
+  {title :'June' , value : 'june' , num: 6}, {title :'July' , value: 'july', num: 7} ,
+  {title: 'August' , value: 'august' , num: 8} ,
+  {title: 'September' , value: 'september', num : 9 },
+  {title: 'October' , value: 'october', num: 10} , {title :'November' , value : 'november', num: 11} ,
+  { title : 'December' ,value: 'december',num : 12}] ;
+  
 
   valueChange($event) {
     console.log(this.monthName) ;
-    this.router.navigate(['months',this.monthName, 'details']);
+    this.router.navigate(['months',this.monthName]);
   }
   
   openModal() {
@@ -26,15 +33,8 @@ export class DocAppointmentComponent implements OnInit {
   constructor(private router : Router , private modalService : NgbModal) { }
 
   ngOnInit() {
-    this.monthList = [{title : 'January' ,value: 'january', num: 1} , {title:'February' , value: 'february',num: 2} , 
-  {title : 'March' , value: 'march',num : 3  } ,{title : 'April' , value : 'april', num: 4 },
-  {title: 'May' , value: 'may' , num: 5}, 
-  {title :'June' , value : 'june' , num: 6}, {title :'July' , value: 'july', num: 7} ,
-  {title: 'August' , value: 'august' , num: 8} ,
-  {title: 'September' , value: 'september', num : 9 },
-  {title: 'October' , value: 'october', num: 10} , {title :'November' , value : 'november', num: 11} ,
-  { title : 'December' ,value: 'december',num : 12}] ;
-  }
-  
+     this.monthName = (new Date().toLocaleString('default', { month: 'long' })).toLocaleLowerCase() ;
+     this.router.navigate(['months',(this.monthName)]);
 
+  }
 }

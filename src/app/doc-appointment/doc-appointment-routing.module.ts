@@ -8,7 +8,7 @@ const routes: Routes = [
         component: DocAppointmentComponent
     },
     {
-      path: ':id',
+      path: 'months/:id',
       component: DocAppointmentComponent
     }
 ];

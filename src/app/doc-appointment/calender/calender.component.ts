@@ -1,18 +1,19 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, Inject } from '@angular/core';
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-calender',
   templateUrl: './calender.component.html',
   styleUrls: ['./calender.component.css']
 })
-// export interface Tile {
-//   cols: number;
-//   rows: number;
-//   text: string;
-//   border: string;
-// }
+
 
 export class CalenderComponent implements OnInit , OnChanges {
+
   @Input() month: any ;
   filteredMonth: any ;
   filtered: any ;
@@ -44,5 +45,6 @@ export class CalenderComponent implements OnInit , OnChanges {
     console.log(this.filtered[0].monthName , this.month) ;
   }
   
-
 }
+
+
