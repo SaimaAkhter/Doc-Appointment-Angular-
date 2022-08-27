@@ -1,51 +1,73 @@
 <div id="modal-container" class="hidden">
     <div class="finishtrip_modal">
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
  
             <p>
               <label for="firstname">First Name </label>
               <input type="text" id="firstname" name="firstname" formControlName="firstname">
             </p>
+            <div *ngIf="appointmentForm.get('firstname').errors">
+                Enter Name
+            </div>
            
             <p>
               <label for="lastname">Last Name </label>
               <input type="text" id="lastname" name="lastname" formControlName="lastname">
             </p>
-           
+            <div *ngIf="appointmentForm.get('lastname').errors">
+                Enter Name
+            </div>
             <p>
               <label for="email">Email </label>
               <input type="text" id="email" name="email" formControlName="email">
             </p>
+            <div *ngIf="appointmentForm.get('email').errors">
+                Enter Email
+            </div>
            
             <p>
               <label for="gender">Geneder </label>
               <input type="radio" value="male" id="gender" name="gender" formControlName="gender"> Male
               <input type="radio" value="female" id="gender" name="gender" formControlName="gender"> Female
             </p>
+            <div *ngIf="appointmentForm.get('gender').errors">
+                Enter Gender
+            </div>
            
             <p>
               <label for="isMarried">Age </label>
-              <input type="checkbox" id="isMarried" name="isMarried" formControlName="age">
+              <input type="number" id="isMarried" name="isMarried" formControlName="age">
             </p>
+            <div *ngIf="appointmentForm.get('age').errors">
+                Enter Age
+            </div>
            
            
             <p>
               <label for="country">Date</label>
               <input type="date" id="isMarried" name="isMarried" formControlName="date">
-
             </p>
+            <div *ngIf="appointmentForm.get('date').errors">
+                Enter date
+            </div>
 
             <p>
-                <label for="country">Date</label>
+                <label for="country">Time</label>
                 <input type="time" id="isMarried" name="isMarried" formControlName="time">
-  
-              </p>
+            </p>
+            <div *ngIf="appointmentForm.get('date').errors">
+                Enter time
+            </div>
            
            
             <p>
               <button type="submit">Submit</button>
             </p>
+            <p>
+              <button type="button" (click) = "cancel()">Cancel</button>
+            </p>
            
           </form>
+
     </div>
   </div>

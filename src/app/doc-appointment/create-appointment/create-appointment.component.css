@@ -1,24 +1,8 @@
-#finishtrip{
-    width : 258px;
-}
-
-#finishtrip_title{
-
-    margin-left : 26px;
-    margin-top : 95px;
-    width : 277px;
-
-}
-
-#finishtrip_column{
-    display: flex;
-    flex-direction: column;
-}
 
 .finishtrip_modal {
     padding: 14px 37px;
     width: 700px;
-    height: 300px;
+    /* height: 300px; */
     background: #F7F8FC;
     border: 1px solid #DFE0EB;
     box-sizing: border-box;
@@ -26,28 +10,6 @@
     border-radius: 5px;
     flex-direction : row ;
     display: flex;
-}
-
-#yes{
-    height : 38px;
-    width : 128px;
-}
-
-#finish_trip_button{
-    height:38px;
-    width :  128px;
-    border: 1px solid #9B9B9B;
-    color : #9B9B9B;
-    box-sizing: border-box;
-    border-radius: 4px;
-    margin-left : 30px;
-
-}
-
-#finish_row{
-    margin-top : 32px;
-    margin-left : 22px;
-
 }
 
 #modal-container {
